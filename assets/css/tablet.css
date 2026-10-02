@@ -1,0 +1,100 @@
+/* ==========================================================
+   tablet.css — Tablet layout (768px to 1023.98px)
+   ========================================================== */
+
+@media (min-width:768px) and (max-width:1023.98px){
+  .container{padding:0 24px}
+  .desktop-only{display:none}
+  .tablet-only{display:block}
+  .mobile-only{display:none !important}
+  .mobile-tablet-only{display:inline-flex}
+
+  /* Header keeps desktop nav but condenses */
+  .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(180%);border-bottom:1px solid var(--c-border)}
+  .header-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;height:64px}
+  .primary-nav{display:none}
+  .brand-name{display:none}
+
+  /* Hero */
+  .hero{padding:48px 0 64px}
+  .hero-inner{grid-template-columns:1fr;gap:32px}
+  .hero-visual{min-height:320px}
+  .hero-title{font-size:clamp(2.25rem, 5vw, 3rem)}
+  .hero-sub{font-size:16px}
+
+  /* Sections */
+  .section{padding:60px 0}
+  .section-title{font-size:1.875rem}
+  .section-head{margin-bottom:32px}
+
+  /* Grids — 2-3 columns */
+  .category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .intention-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .testimonial-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .products-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .footer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+
+  /* Promo */
+  .promo{padding:48px;grid-template-columns:1fr;gap:24px}
+  .promo-title{font-size:2rem}
+
+  /* --- Product carousel (tablet) --- */
+  .product-carousel{position:relative;margin:0 -24px;padding:0 24px;max-width:100vw;overflow:hidden}
+  .carousel-track{display:flex;flex-wrap:nowrap;gap:14px;padding:4px 24px 18px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+  .carousel-track::-webkit-scrollbar{display:none}
+  .carousel-track .product-card{flex:0 0 220px;min-width:220px;max-width:220px;scroll-snap-align:start}
+  .carousel-btn{width:40px;height:40px;opacity:1;background:rgba(255,255,255,0.95);top:36%;box-shadow:var(--shadow-md)}
+  .carousel-btn.prev{left:8px}
+  .carousel-btn.next{right:8px}
+  .product-carousel .carousel-btn:disabled{opacity:0;pointer-events:none}
+
+  /* Product page */
+  .product-page{padding:24px 0 60px}
+  .product-detail{grid-template-columns:1fr;gap:32px}
+  .product-info{position:static}
+  .product-info h1{font-size:26px}
+
+  /* Cart / checkout */
+  .cart-grid{grid-template-columns:1fr;gap:24px}
+  .cart-summary{position:static}
+  .checkout-grid{grid-template-columns:1fr;gap:24px}
+  .order-summary{position:static}
+  .shop-grid{grid-template-columns:1fr;gap:20px}
+  .shop-sidebar{position:static}
+  .account-grid{grid-template-columns:200px 1fr;gap:20px}
+
+  /* Admin tablet */
+  .admin-shell{display:grid;grid-template-columns:64px 1fr}
+  .admin-sidebar{position:static;width:auto;height:100vh;transform:none;padding:16px 8px;box-shadow:none;border-right:1px solid var(--c-border)}
+  .admin-sidebar-overlay{display:none}
+  .admin-brand{padding:0 0 14px;display:flex;justify-content:center}
+  .admin-brand .brand-name{display:none}
+  .admin-link{padding:10px;justify-content:center}
+  .admin-link span{display:none}
+  .admin-side-foot .admin-link span{display:none}
+  .admin-menu-toggle{display:none !important}
+  .admin-content{padding:20px}
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+  .grid-2,.grid-3{grid-template-columns:1fr;gap:16px}
+  .form-row,.form-row-3{grid-template-columns:1fr 1fr}
+  .form-row-3{grid-template-columns:repeat(3,1fr)}
+  .toolbar{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  .toolbar form{display:flex;flex-direction:row;align-items:center;gap:8px;flex-wrap:wrap}
+  .toolbar input[type=search],.toolbar input[type=text],.toolbar select{width:auto;padding:9px 12px}
+  .toolbar .btn{width:auto;margin:0}
+  .toolbar-actions{display:flex;flex-direction:row;align-items:center;gap:8px;flex-wrap:wrap}
+  .data-table{font-size:13px;min-width:0;display:table;width:100%}
+  .data-table thead,.data-table tbody{display:table-row-group}
+  .data-table th,.data-table td{padding:12px 10px;min-width:auto}
+  .card-block{padding:20px;border-radius:var(--r-md);margin-bottom:14px}
+
+  /* Bottom nav for tablet too (since we use mobile nav pattern) */
+  .bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(255,255,255,0.95);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-top:1px solid var(--c-border);height:64px;padding:0 8px;padding-bottom:env(safe-area-inset-bottom, 0);display:flex}
+  .site-main{padding-bottom:96px}
+  .support-floats{bottom:80px;right:20px}
+
+  .bottom-link{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;color:var(--c-muted);min-width:0;position:relative;height:100%;transition:color .15s}
+  .bottom-link:hover,.bottom-link.active{color:var(--c-text)}
+  .bottom-icon{display:flex;align-items:center;justify-content:center}
+  .bottom-badge{position:absolute;top:6px;margin-left:14px;min-width:16px;height:16px;border-radius:8px;background:var(--c-text);color:var(--c-button-text);font-size:10px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;padding:0 4px;line-height:1}
+}
